@@ -5,7 +5,7 @@ public class Lesson9_DP {
     public static void main(String[] args) {
 //        String str1 = "mitcmu";
 //        String str2 = "mtacnu";
-        String str1 = "mouuuse";
+        String str1 = "mouuse";
         String str2 = "mouse";
         char[] a = str1.toCharArray();
         char[] b = str2.toCharArray();
