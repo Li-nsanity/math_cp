@@ -1,6 +1,6 @@
 package BasicThinking;
 
-import javax.servlet.ServletOutputStream;
+//import javax.servlet.ServletOutputStream;
 
 class Result {
     public long wheatNum = 0;//当前麦粒数量
