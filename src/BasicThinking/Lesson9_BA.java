@@ -2,8 +2,11 @@ package BasicThinking;
 
 public class Lesson9_BA {
     public static void main(String[] args) {
-        String str1 = "mitcmu";
-        String str2 = "mtacnu";
+        long beginTime = System.currentTimeMillis();
+//        String str1 = "mitcmu";
+//        String str2 = "mtacnu";
+        String str1 = "mitcmubdgcbfd";
+        String str2 = "mtacnufghcbdg";
         char[] a = str1.toCharArray();
         char[] b = str2.toCharArray();
         int n = a.length;
@@ -12,6 +15,8 @@ public class Lesson9_BA {
         int j = 1;
         int edist = 0;
         Lesson9_BA.lwstBT(a, b, n, m, i, j, edist);
+        long endTime = System.currentTimeMillis();
+        System.out.println("程序运行时间：" + (endTime - beginTime) + "ms");
     }
 
     public static int minDist = Integer.MAX_VALUE; // 存储结果
@@ -21,7 +26,7 @@ public class Lesson9_BA {
             if (i < n) edist += (n - i);
             if (j < m) edist += (m - j);
             if (edist < minDist) minDist = edist;
-            System.out.println(minDist);
+            System.out.println("最小编辑距离为：" +minDist);
             return;
         }
         if (a[i] == b[j]) {

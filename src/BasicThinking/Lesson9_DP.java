@@ -5,14 +5,18 @@ public class Lesson9_DP {
     public static void main(String[] args) {
 //        String str1 = "mitcmu";
 //        String str2 = "mtacnu";
-        String str1 = "mouuse";
-        String str2 = "mouse";
+        String str1 = "mitcmubdgcbfd";
+        String str2 = "mtacnufghcbdg";
+        long beginTime = System.currentTimeMillis();
         char[] a = str1.toCharArray();
         char[] b = str2.toCharArray();
         int n = a.length;
         int m = b.length;
-        int minDist = lwstDP(a,n,b,m);
-        System.out.println("最小编辑距离为："+minDist);
+        int minDist = lwstDP(a, n, b, m);
+        long endTime = System.currentTimeMillis();
+        System.out.println("最小编辑距离为：" + minDist);
+        System.out.println("程序运行时间：" + (endTime - beginTime) + "ms");
+
     }
 
     public static int lwstDP(char[] a, int n, char[] b, int m) {
@@ -42,14 +46,14 @@ public class Lesson9_DP {
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < m; j++) {
                 if (a[i] == b[j]) {
-                    int min= Math.min(minDist[i - 1][j] + 1, minDist[i][j - 1] + 1);
-                    minDist[i][j] = Math.min(min,minDist[i-1][j-1]);
-                } else{
-                    int min= Math.min(minDist[i - 1][j] + 1, minDist[i][j - 1] + 1);
-                    minDist[i][j] = Math.min(min,minDist[i-1][j-1]+1);
+                    int min = Math.min(minDist[i - 1][j] + 1, minDist[i][j - 1] + 1);
+                    minDist[i][j] = Math.min(min, minDist[i - 1][j - 1]);
+                } else {
+                    int min = Math.min(minDist[i - 1][j] + 1, minDist[i][j - 1] + 1);
+                    minDist[i][j] = Math.min(min, minDist[i - 1][j - 1] + 1);
                 }
             }
         }
-        return minDist[n-1][m-1];
+        return minDist[n - 1][m - 1];
     }
 }
