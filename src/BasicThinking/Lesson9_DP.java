@@ -3,10 +3,10 @@ package BasicThinking;
 
 public class Lesson9_DP {
     public static void main(String[] args) {
-//        String str1 = "mitcmu";
-//        String str2 = "mtacnu";
-        String str1 = "mitcmubdgcbfd";
-        String str2 = "mtacnufghcbdg";
+        String str1 = "mitcmu";
+        String str2 = "mtacnu";
+//        String str1 = "mitcmubdgcbfd";
+//        String str2 = "mtacnufghcbdg";
         long beginTime = System.currentTimeMillis();
         char[] a = str1.toCharArray();
         char[] b = str2.toCharArray();
